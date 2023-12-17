@@ -26,6 +26,6 @@ Before you dive in, make sure you have the following installed:
 
 
 ![E-commerce Store](https://i.ibb.co/jL1nyqN/Screenshot-2023-12-18-000019.png)
-![E-commerce Store](https://ibb.co/BgS0yvp)
-![Stripe Integration](https://ibb.co/gDj3VN7)
+![E-commerce Store](https://i.ibb.co/mTDr0vG/Screenshot-2023-12-18-001136.png)
+![Stripe Integration](https://i.ibb.co/vJwHYpB/Screenshot-2023-12-18-001206.png)
 
