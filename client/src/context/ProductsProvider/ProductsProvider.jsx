@@ -11,8 +11,9 @@ const ProductsProvider = ({children}) => {
   const [filter, setFilter] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [cart, setCart] = useState(
-    JSON.parse(window.localStorage.getItem("cart")) || {}
+    JSON.parse(window.localStorage.getItem("cart")) ?? {}
   );
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -59,10 +60,8 @@ const ProductsProvider = ({children}) => {
 
       products.forEach((product) => {
         cartObj[product.id] = 0;
-        console.log("AA");
       });
 
-      console.log("ASD");
       setCart(cartObj);
     };
 
@@ -76,12 +75,19 @@ const ProductsProvider = ({children}) => {
   }, [cart]);
 
   const addToCart = (id, quantity) => {
+    console.log(cart);
+    console.log(id);
+    console.log(quantity);
     setCart((prev) => {
       if (prev.hasOwnProperty(id)) {
         return {...prev, [id]: prev[id] + quantity};
+      } else {
+        // If the product is not in the cart, add it with the specified quantity
+        return {...prev, [id]: quantity};
       }
     });
   };
+
   const removeFromCart = (id) => {
     setCart((prev) => {
       if (prev[id] == 0) {
